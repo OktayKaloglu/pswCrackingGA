@@ -28,7 +28,31 @@ public class Main {
             System.out.println(" ");
             System.out.println(" ");
         }
-        System.out.println("Execution time is " + formatter.format((timeTakes) / 3) + " micro seconds");
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " micro seconds");
+
+        psw="DeepLearningDeepLearning";
+        cracker = new PswCracker(64, psw, 5);
+        timeTakes=0;
+        for(int i =0;i<3;i++) {
+            long startTime = System.nanoTime();
+            popsData= cracker.crackThePSW();
+            long endTime = System.nanoTime();
+            long totalTime = endTime - startTime;
+            timeTakes+=((totalTime) / 1000000d);
+            //System.out.println("Generation    "+"Best Chromosome    "+"Generation's Fitness Mean");
+            for(int j =0;j<popsData.size();j++){
+                System.out.println("Generation: "+j+"  Fitness Mean: "+popsData.get(j)[0]+"  Best Chromosome: "+popsData.get(j)[1]);
+            }
+            System.out.println("Execution time is " + formatter.format((totalTime)/1000000d) + " mili seconds");
+            System.out.println(" ");
+            System.out.println(" ");
+            System.out.println(" ");
+        }
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " micro seconds");
+
+
+
+
         /*
         SplittableRandom rnd= new SplittableRandom();
 
