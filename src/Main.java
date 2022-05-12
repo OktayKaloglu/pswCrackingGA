@@ -32,7 +32,7 @@ public class Main {
                 System.out.println(" ");
             }
         }
-        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " micro seconds");
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " mili seconds");
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(" ");
@@ -45,7 +45,7 @@ public class Main {
             popsData= cracker.crackThePSW();
             long endTime = System.nanoTime();
             long totalTime = endTime - startTime;
-            
+
             if(i>0) {
                 timeTakes+=((totalTime) / 1000000d);
                 for (int j = 0; j < popsData.size(); j++) {
@@ -57,7 +57,7 @@ public class Main {
                 System.out.println(" ");
                 System.out.println(" ");
             }        }
-        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " micro seconds");
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " mili seconds");
 
 
     }
