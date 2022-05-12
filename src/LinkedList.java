@@ -1,5 +1,5 @@
 public class LinkedList {
-     class Node{
+     protected class Node{
         public Node next=null;
         public String chromosome;
         public int fitness;
@@ -10,7 +10,7 @@ public class LinkedList {
         }
     }
 
-    private Node head;
+    private Node head=null;
 
     public void add(String chromosome,int fitness) {//this method ensures that list always sorted as decreasing order
         Node nod = new Node(chromosome,fitness);
@@ -32,6 +32,7 @@ public class LinkedList {
                 if(temp.next==null){//we need to add it to the end of the list
                     temp.next=nod;
                 }else{// we need to add it to 2 nodes
+
                     nod.next=temp.next;
                     temp.next=nod;
                 }
@@ -41,8 +42,7 @@ public class LinkedList {
         }
     }
     public String[] popElits(){//it pops elits returns the chromosomes
-        String[] chromosomes={head.chromosome,head.next.chromosome};
-        return chromosomes;
+        return new String[]{head.chromosome,head.next.chromosome};
     }
 
 }
