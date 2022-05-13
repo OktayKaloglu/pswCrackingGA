@@ -77,6 +77,7 @@ public class PswCracker {
             popsData.add(new String[]{Integer.toString(popsFitnessMean/popSize), elits[0]});
             parent1 = elits[0];
             parent2 = elits[1];
+            fitness=population.getFitness();
         }
     }
     private String[] makeChild(String parent1,String parent2){

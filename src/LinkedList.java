@@ -44,5 +44,8 @@ public class LinkedList {
     public String[] popElits(){//it pops elits returns the chromosomes
         return new String[]{head.chromosome,head.next.chromosome};
     }
+    public int getFitness(){
+        return head.fitness;
+    }
 
 }
