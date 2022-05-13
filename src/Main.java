@@ -22,7 +22,7 @@ public class Main {
             long totalTime = endTime - startTime;
             //System.out.println("Generation    "+"Best Chromosome    "+"Generation's Fitness Mean");
             if(i>0) {
-                timeTakes+=((totalTime) / 1000000d);
+                timeTakes+=((totalTime) );
                 for (int j = 0; j < popsData.size(); j++) {
                     System.out.println("Generation: " + j + "  Fitness Mean: " + popsData.get(j)[0] + "  Best Chromosome: " + popsData.get(j)[1]);
                 }
@@ -33,7 +33,7 @@ public class Main {
                 System.out.println(" ");
             }
         }
-        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " milli seconds");
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3000000d) + " milli seconds");
         System.out.println(" ");
         System.out.println("Mean generation is " + formatter2.format((meanGeneration) / 3));
 
@@ -51,7 +51,7 @@ public class Main {
             long totalTime = endTime - startTime;
 
             if(i>0) {
-                timeTakes+=((totalTime) / 1000000d);
+                timeTakes+=totalTime;
                 for (int j = 0; j < popsData.size(); j++) {
                     System.out.println("Generation: " + j + "  Fitness Mean: " + popsData.get(j)[0] + "  Best Chromosome: " + popsData.get(j)[1]);
                 }
@@ -60,8 +60,10 @@ public class Main {
                 System.out.println(" ");
                 System.out.println(" ");
                 System.out.println(" ");
-            }        }
-        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3) + " milli seconds");
+            }
+        }
+
+        System.out.println("Mean execution time is " + formatter.format((timeTakes) / 3000000d) + " milli seconds");
         System.out.println("Mean generation is " + formatter2.format((meanGeneration) / 3));
 
     }
